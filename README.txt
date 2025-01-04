@@ -1,7 +1,3 @@
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-CIS 1200 Game Project README
-PennKey: 30276991
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
 ===================
 =: Core Concepts :=
@@ -101,11 +97,3 @@ PennKey: 30276991
   Some game parameters (like board size or ship lengths) could be more flexible if defined as constants or configuration parameters at the top of the class, making the code easier to tweak.
 
 
-
-
-========================
-=: External Resources :=
-========================
-
-- Cite any external resources (images, tutorials, etc.) that you may have used 
-  while implementing your game.
