@@ -3,10 +3,6 @@
 =: Core Concepts :=
 ===================
 
-- List the four core concepts, the features they implement, and why each feature
-  is an appropriate use of the concept. Incorporate the feedback you got after
-  submitting your proposal.
-
   1. Collections - I used a LinkedList to allow players to undo ship placements as they set up the board and a TreeMap
   to store the past games. For the LinkedList, each ship placement is added to the list, and players can remove the most recent placement.
   This was a appropriate choice of Collection because there is no need to have a key and value and undoing aligns with the last in first out
@@ -25,20 +21,9 @@
   the game by writing the game state to a file and reading and reconstructing it later. I used BufferedWriter and BufferedReader
   and handled exceptions to make sure the game doesn't crash if a file operation fails.
 
-===============================
-=: File Structure Screenshot :=
-===============================
-- Include a screenshot of your project's file structure. This should include
-  all of the files in your project, and the folders they are in. You can
-  upload this screenshot in your homework submission to gradescope, named 
-  "file_structure.png".
-
 =========================
-=: Your Implementation :=
+=: Implementation :=
 =========================
-
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
 
   Battleship:
   - (Main game state logic) Maintains the boards for both players
@@ -77,23 +62,3 @@
   Move:
   - Helper function that tracks which player made the placement move with start coordinates, ship length, and orientation.
   - Enables the undo operation
-
-
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
-
- One initial challenge was ensuring that all core game logic resided purely in the Battleship model class, independent of any GUI code.
- When I first started I mixed some UI updates or event handling logic directly in the model, making it harder to test and maintain.
- Recognizing this issue and then moving all GUI-related code into separate view classes was a key step.
-
-
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
-
-  I think overall there is a good seperation of functionality with the Battleship handling all the game logic and other classes handling rendering.
-  The private state is wlel encapsulated as the Battleship class encapsulates its internal state (boards, turn flags, counters) and
-  provides public methods to mutate and query it. The private state is not directly accessible, ensuring the model maintains control over its consistency.
-
-  Some game parameters (like board size or ship lengths) could be more flexible if defined as constants or configuration parameters at the top of the class, making the code easier to tweak.
-
-
